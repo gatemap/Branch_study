@@ -34,8 +34,8 @@
             this.addButton = new System.Windows.Forms.Button();
             this.subButton = new System.Windows.Forms.Button();
             this.multiButton = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
-            this.button5 = new System.Windows.Forms.Button();
+            this.DivButton = new System.Windows.Forms.Button();
+            this.MoDbutton = new System.Windows.Forms.Button();
             this.button6 = new System.Windows.Forms.Button();
             this.button7 = new System.Windows.Forms.Button();
             this.button8 = new System.Windows.Forms.Button();
@@ -67,11 +67,12 @@
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(162, 25);
             this.textBox2.TabIndex = 2;
+            this.textBox2.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
             // 
             // addButton
             // 
             this.addButton.Location = new System.Drawing.Point(12, 114);
-            this.addButton.Name = "addButton";
+            this.addButton.Name = "add_Button";
             this.addButton.Size = new System.Drawing.Size(75, 23);
             this.addButton.TabIndex = 3;
             this.addButton.Text = "+";
@@ -81,7 +82,7 @@
             // subButton
             // 
             this.subButton.Location = new System.Drawing.Point(99, 114);
-            this.subButton.Name = "subButton";
+            this.subButton.Name = "sub_Button";
             this.subButton.Size = new System.Drawing.Size(75, 23);
             this.subButton.TabIndex = 4;
             this.subButton.Text = "-";
@@ -91,42 +92,42 @@
             // multiButton
             // 
             this.multiButton.Location = new System.Drawing.Point(189, 114);
-            this.multiButton.Name = "multiButton";
+            this.multiButton.Name = "multi_Button";
             this.multiButton.Size = new System.Drawing.Size(75, 23);
             this.multiButton.TabIndex = 5;
             this.multiButton.Text = "*";
             this.multiButton.UseVisualStyleBackColor = true;
             this.multiButton.Click += new System.EventHandler(this.multiButton_Click);
             // 
-            // button4
+            // DivButton
             // 
-            this.button4.Location = new System.Drawing.Point(279, 114);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(75, 23);
-            this.button4.TabIndex = 6;
-            this.button4.Text = "/";
-            this.button4.UseVisualStyleBackColor = true;
-            this.button4.Click += new System.EventHandler(this.button4_Click);
+            this.DivButton.Location = new System.Drawing.Point(279, 114);
+            this.DivButton.Name = "div_Button";
+            this.DivButton.Size = new System.Drawing.Size(75, 23);
+            this.DivButton.TabIndex = 6;
+            this.DivButton.Text = "/";
+            this.DivButton.UseVisualStyleBackColor = true;
+            this.DivButton.Click += new System.EventHandler(this.Div_button_Click);
             // 
-            // button5
+            // MoDbutton
             // 
-            this.button5.Location = new System.Drawing.Point(360, 114);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(75, 23);
-            this.button5.TabIndex = 7;
-            this.button5.Text = "%";
-            this.button5.UseVisualStyleBackColor = true;
-            this.button5.Click += new System.EventHandler(this.button5_Click);
+            this.MoDbutton.Location = new System.Drawing.Point(360, 114);
+            this.MoDbutton.Name = "mod_Button";
+            this.MoDbutton.Size = new System.Drawing.Size(75, 23);
+            this.MoDbutton.TabIndex = 7;
+            this.MoDbutton.Text = "%";
+            this.MoDbutton.UseVisualStyleBackColor = true;
+            this.MoDbutton.Click += new System.EventHandler(this.Mod_button_Click);
             // 
             // button6
             // 
             this.button6.Location = new System.Drawing.Point(12, 153);
-            this.button6.Name = "button6";
+            this.button6.Name = "is_Button";
             this.button6.Size = new System.Drawing.Size(75, 23);
             this.button6.TabIndex = 8;
             this.button6.Text = "=";
             this.button6.UseVisualStyleBackColor = true;
-            this.button6.Click += new System.EventHandler(this.button6_Click);
+            this.button6.Click += new System.EventHandler(this.Is_button_Click);
             // 
             // button7
             // 
@@ -166,6 +167,7 @@
             this.calcResult.ReadOnly = true;
             this.calcResult.Size = new System.Drawing.Size(290, 272);
             this.calcResult.TabIndex = 12;
+            this.calcResult.TextChanged += new System.EventHandler(this.calcResult_TextChanged);
             // 
             // resultDelete
             // 
@@ -188,8 +190,8 @@
             this.Controls.Add(this.button8);
             this.Controls.Add(this.button7);
             this.Controls.Add(this.button6);
-            this.Controls.Add(this.button5);
-            this.Controls.Add(this.button4);
+            this.Controls.Add(this.MoDbutton);
+            this.Controls.Add(this.DivButton);
             this.Controls.Add(this.multiButton);
             this.Controls.Add(this.subButton);
             this.Controls.Add(this.addButton);
@@ -212,8 +214,8 @@
         private System.Windows.Forms.Button addButton;
         private System.Windows.Forms.Button subButton;
         private System.Windows.Forms.Button multiButton;
-        private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Button button5;
+        private System.Windows.Forms.Button DivButton;
+        private System.Windows.Forms.Button MoDbutton;
         private System.Windows.Forms.Button button6;
         private System.Windows.Forms.Button button7;
         private System.Windows.Forms.Button button8;
