@@ -141,22 +141,22 @@
             // button8
             // 
             this.button8.Location = new System.Drawing.Point(99, 192);
-            this.button8.Name = "button8";
+            this.button8.Name = "removeButton";
             this.button8.Size = new System.Drawing.Size(75, 23);
             this.button8.TabIndex = 10;
             this.button8.Text = "←";
             this.button8.UseVisualStyleBackColor = true;
-            this.button8.Click += new System.EventHandler(this.button8_Click);
+            this.button8.Click += new System.EventHandler(this.removeButton_Click);
             // 
             // button1
             // 
             this.button1.Location = new System.Drawing.Point(189, 192);
-            this.button1.Name = "button1";
+            this.button1.Name = "minusChangebutton";
             this.button1.Size = new System.Drawing.Size(75, 23);
             this.button1.TabIndex = 11;
             this.button1.Text = "+/-";
             this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.button1.Click += new System.EventHandler(this.minusChange_Click);
             // 
             // calcResult
             // 
