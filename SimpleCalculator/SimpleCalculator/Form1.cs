@@ -103,6 +103,7 @@ namespace SimpleCalculator
         {
             //AC버튼 누르면 결과 화면 지우기
             textBox1.Clear();
+            textBox2.Clear();
         }
         private void textBox2_TextChanged(object sender, EventArgs e)
         {
