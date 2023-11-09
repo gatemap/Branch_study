@@ -40,97 +40,89 @@ namespace SimpleCalculator
 
         private void addButton_Click(object sender, EventArgs e) // 더하기 버튼 입력하기, num1 + 형태로 출력
         {
-            if (textBox1.Text.Length != 0) // 이미 입력된 연산자 바꾸기 1234- 상태에서 +를 입력하면 1234+로 바뀜
+            if (textBox1.Text.Length != 0 && textBox1.Text.Contains('=')) // 이미 입력된 연산자 바꾸기 1234- 상태에서 +를 입력하면 1234+로 바뀜
             {
                 textBox1.Text = textBox1.Text.Substring(0, textBox1.Text.Length - 1); // 연산자는 문자열의 마지막이므로 마지막 빼고 추출
                 textBox1.Text += "+"; // 연산자 바꾸기
                 textBox2.Clear(); // 입력 칸은 초기화시키기
-                op = Operate.Add; // 더하기 연산자 지정 
-
             }
 
             else if (decimal.TryParse(textBox2.Text, out num1))
             {
                 textBox1.Text = textBox2.Text + "+"; // 더하기 연산 추가!
                 textBox2.Clear(); // num2를 다시 눌러야하니 초기화~!
-                op = Operate.Add; // 더하기 연산자 지정
             }
+            
+            op = Operate.Add; // 더하기 연산자 지정
 
         }
 
         private void subButton_Click(object sender, EventArgs e)
         {            
-            if(textBox1.Text.Length != 0) // 이미 입력된 연산자 바꾸기
+            if(textBox1.Text.Length != 0 && textBox1.Text.Contains('=')) // 이미 입력된 연산자 바꾸기
             {
                 textBox1.Text = textBox1.Text.Substring(0, textBox1.Text.Length - 1);
                 textBox1.Text += "-";
                 textBox2.Clear();
-                op = Operate.Sub;
       
             }
             else if (decimal.TryParse(textBox2.Text, out num1))
             {
                 textBox1.Text = textBox2.Text + "-"; // 빼기 연산 추가!
                 textBox2.Clear(); // textBox2 비우기
-                op = Operate.Sub; // 빼기 연산자 지정
             }
+                op = Operate.Sub; // 빼기 연산자 지정
         }
 
         private void multiButton_Click(object sender, EventArgs e)
         {
-            if (textBox1.Text.Length != 0)
+            if (textBox1.Text.Length != 0 && textBox1.Text.Contains('='))
             {
                 textBox1.Text = textBox1.Text.Substring(0, textBox1.Text.Length - 1);
                 textBox1.Text += "*";
                 textBox2.Clear();
-                op = Operate.Mult;
-
             }
 
             else if (decimal.TryParse(textBox2.Text, out num1))
             {
                 textBox1.Text = textBox2.Text + "*"; // 곱하기 연산 추가
                 textBox2.Clear(); // textBox2 비우기
-                op = Operate.Mult; // 곱하기 연산자 지정
             }
+                op = Operate.Mult; // 곱하기 연산자 지정
         }
 
         private void Div_button_Click(object sender, EventArgs e)
         {
-            if (textBox1.Text.Length != 0)
+            if (textBox1.Text.Length != 0 && textBox1.Text.Contains('='))
             {
                 textBox1.Text = textBox1.Text.Substring(0, textBox1.Text.Length - 1);
                 textBox1.Text += "/";
                 textBox2.Clear();
                 op = Operate.Div;
-
             }
-
             else if (decimal.TryParse(textBox2.Text, out num1))
             {
                 textBox1.Text = textBox2.Text + "/"; // 나누기 연산 추가
                 textBox2.Clear(); // textBox2 비우기
-                op = Operate.Div; // 나누기 연산자 지정
             }
+                op = Operate.Div; // 나누기 연산자 지정
         }
 
         private void Mod_button_Click(object sender, EventArgs e)
         {
-            if (textBox1.Text.Length != 0)
+            if (textBox1.Text.Length != 0 && textBox1.Text.Contains('='))
             {
                 textBox1.Text = textBox1.Text.Substring(0, textBox1.Text.Length - 1);
                 textBox1.Text += "%";
                 textBox2.Clear();
-                op = Operate.Mod;
-
             }
 
             else if (decimal.TryParse(textBox2.Text, out num1))
             {
                 textBox1.Text = textBox2.Text + "%"; // 나머지 연산 추가
                 textBox2.Clear(); // textBox2 비우기
-                op = Operate.Mod; // 나머지 연산자 지정
             }
+                op = Operate.Mod; // 나머지 연산자 지정
         }
 
         private void Print_Result_Button_Click(object sender, EventArgs e)
@@ -141,22 +133,22 @@ namespace SimpleCalculator
                 string strNum = string.Empty;
 
                 if (num2 < 0)
-                    strNum = string.Format("({0})", num2);
+                    strNum = string.Format("({0:#,0})", num2);
                 else
-                    strNum = num2.ToString();
+                    strNum = string.Format("{0:#,0}", num2);
 
                 switch (op)
                 {
                     case Operate.Add:
-                        textBox1.Text += string.Format("{0:#,0}={1:#,0}", strNum, num1+num2); // 연산 진행 {0}: num1 + 연산자, {1}: num2
+                        textBox1.Text += string.Format("{0}={1:#,0}", strNum, num1+num2); // 연산 진행 {0}: num1 + 연산자, {1}: num2
                         break;
 
                     case Operate.Sub:
-                        textBox1.Text += string.Format("{0:#,0}={1:#,0}", strNum, num1-num2); // 연산 진행 {0}: num1 + 연산자, {1}: num2
+                        textBox1.Text += string.Format("{0}={1:#,0}", strNum, num1-num2); // 연산 진행 {0}: num1 + 연산자, {1}: num2
                         break;
 
                     case Operate.Mult:
-                        textBox1.Text += string.Format("{0:#,0}={1:#,0}", strNum, num1 * num2); // 연산 진행 {0}: num1 + 연산자, {1}: num2
+                        textBox1.Text += string.Format("{0}={1:#,0}", strNum, num1 * num2); // 연산 진행 {0}: num1 + 연산자, {1}: num2
                         break;
 
                     case Operate.Div:
@@ -166,7 +158,7 @@ namespace SimpleCalculator
                             textBox2.Clear();
                         }
                         else
-                            textBox1.Text += string.Format("{0:#,0}={1:#,0}", strNum, num1 / num2); // 연산 진행 {0}: num1 + 연산자, {1}: num2
+                            textBox1.Text += string.Format("{0}={1:#,0}", strNum, num1 / num2); // 연산 진행 {0}: num1 + 연산자, {1}: num2
                         break;
 
                     case Operate.Mod:
@@ -177,7 +169,7 @@ namespace SimpleCalculator
                         }
                         else
                         {
-                            textBox1.Text += string.Format("{0:#,0}={1:#,0}", strNum, num1 % num2); // 연산 진행 {0}: num1 + 연산자, {1}: num2
+                            textBox1.Text += string.Format("{0}={1:#,0}", strNum, num1 % num2); // 연산 진행 {0}: num1 + 연산자, {1}: num2
                         }
                         break;
                 }
