@@ -137,41 +137,47 @@ namespace SimpleCalculator
         {
             if (decimal.TryParse(textBox2.Text, out num2)) // num2 받고 계산 결과 도출 과정
             {
+                // 마이너스 처리
+                string strNum = string.Empty;
+
+                if (num2 < 0)
+                    strNum = string.Format("({0})", num2);
+                else
+                    strNum = num2.ToString();
 
                 switch (op)
                 {
                     case Operate.Add:
-                        textBox1.Text += string.Format("{0:#,0}={1:#,0}", num2, num1+num2); // 연산 진행 {0}: num1 + 연산자, {1}: num2
+                        textBox1.Text += string.Format("{0:#,0}={1:#,0}", strNum, num1+num2); // 연산 진행 {0}: num1 + 연산자, {1}: num2
                         break;
 
                     case Operate.Sub:
-                        textBox1.Text += string.Format("{0:#,0}={1:#,0}", num2, num1-num2); // 연산 진행 {0}: num1 + 연산자, {1}: num2
+                        textBox1.Text += string.Format("{0:#,0}={1:#,0}", strNum, num1-num2); // 연산 진행 {0}: num1 + 연산자, {1}: num2
                         break;
 
                     case Operate.Mult:
-                        textBox1.Text += string.Format("{0:#,0}={1:#,0}", num2, num1 * num2); // 연산 진행 {0}: num1 + 연산자, {1}: num2
+                        textBox1.Text += string.Format("{0:#,0}={1:#,0}", strNum, num1 * num2); // 연산 진행 {0}: num1 + 연산자, {1}: num2
                         break;
 
                     case Operate.Div:
                         if (num2 == 0) // 0으로 나누는 경우 컷!
                         {
                             MessageBox.Show("0으로 나눌 수 없음");
+                            textBox2.Clear();
                         }
                         else
-                        {
-                             textBox1.Text += string.Format("{0:#,0}={1:#,0}", num2, num1 / num2); // 연산 진행 {0}: num1 + 연산자, {1}: num2
-                        }
+                            textBox1.Text += string.Format("{0:#,0}={1:#,0}", strNum, num1 / num2); // 연산 진행 {0}: num1 + 연산자, {1}: num2
                         break;
 
-                    case Operate.Mod: // 0으로 나누는 경우 컷!
-                        if (num2 == 0)
+                    case Operate.Mod:
+                        if (num2 == 0) // 0으로 나누는 경우 컷!
                         {
                             MessageBox.Show("0으로 나눌 수 없음");
                             textBox2.Clear();
                         }
                         else
                         {
-                            textBox1.Text += string.Format("{0:#,0}={1:#,0}", num2, num1 % num2); // 연산 진행 {0}: num1 + 연산자, {1}: num2
+                            textBox1.Text += string.Format("{0:#,0}={1:#,0}", strNum, num1 % num2); // 연산 진행 {0}: num1 + 연산자, {1}: num2
                         }
                         break;
                 }
@@ -185,13 +191,12 @@ namespace SimpleCalculator
 
         private void removeButton_Click(object sender, EventArgs e)
         {
-            // 입력창이 비어있는 경우 입력된 식의 맨 뒤의 문자를 지운다
+            // 입력창이 비어있으면 아무것도 하지 않기
             if (string.IsNullOrEmpty(textBox2.Text))
-                textBox1.Text = textBox1.Text.Remove(textBox1.Text.Length - 1);
-            // 식 입력창에 들어와 있는 문자 마지막걸 지운다
-            else
-                textBox2.Text = textBox2.Text.Remove(textBox2.Text.Length - 1);
-            
+                return;
+
+            // 입력되어 있는 것만 지운다
+            textBox2.Text = textBox2.Text.Remove(textBox2.Text.Length - 1);
         }
 
         /// <summary>
@@ -303,7 +308,7 @@ namespace SimpleCalculator
                 //첫번째 0은 ,뒤의 변수들 중 인덱스 0, 즉 num을 뜻합니다.
                 // : 뒤의 #,0은 천 단위로 숫자 사이에 쉼표를 삽입합니다.
                 textBox2.Text = string.Format("{0:#,0}", num);
-                
+
                 //textBox2의 텍스트의 끝부터 0개의 문자를 선택합니다.
                 //커서를 TextBox 텍스트의 끝으로 이동시킬 수 있습니다.
                 //여기에 새로운 텍스트를 입력하려면 기존 텍스트의 끝에 추가됩니다.

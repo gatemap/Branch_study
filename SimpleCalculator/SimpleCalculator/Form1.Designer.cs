@@ -71,7 +71,6 @@
             this.label1.Size = new System.Drawing.Size(48, 15);
             this.label1.TabIndex = 1;
             this.label1.Text = "Result";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // textBox2
             // 
