@@ -220,7 +220,7 @@ namespace SimpleCalculator
             textBox2.Text += "0";
         }
 
-        private void button10_Click(object sender, EventArgs e)
+        private void button_dot_Click(object sender, EventArgs e)
         {
             MessageBox.Show("아직 구현 못했습니다ㅠㅠ");
         }
