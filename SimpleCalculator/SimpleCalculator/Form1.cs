@@ -115,13 +115,24 @@ namespace SimpleCalculator
                         break;
 
                     case Operate.Div:
-                        textBox1.Text += string.Format("{0:#,0}={1:#,0}", strNum, num1 / num2); // 연산 진행 {0}: num1 + 연산자, {1}: num2
+                        if (num2 == 0) // 0으로 나누는 경우 컷!
+                        {
+                            MessageBox.Show("0으로 나눌 수 없음");
+                            textBox2.Clear();
+                        }
+                        else
+                            textBox1.Text += string.Format("{0:#,0}={1:#,0}", strNum, num1 / num2); // 연산 진행 {0}: num1 + 연산자, {1}: num2
                         break;
 
                     case Operate.Mod:
-                        textBox1.Text += string.Format("{0:#,0}={1:#,0}", strNum, num1 % num2); // 연산 진행 {0}: num1 + 연산자, {1}: num2
+                        if (num2 == 0) // 0으로 나누는 경우 컷!
+                        {
+                            MessageBox.Show("0으로 나눌 수 없음");
+                            textBox2.Clear();
+                        }
+                        else
+                            textBox1.Text += string.Format("{0:#,0}={1:#,0}", strNum, num1 % num2); // 연산 진행 {0}: num1 + 연산자, {1}: num2
                         break;
-
                 }
 
                 calcResult.Text += textBox1.Text + "\r\n";  //결과 출력하기
