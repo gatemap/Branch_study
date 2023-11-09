@@ -25,8 +25,12 @@ namespace SimpleCalculator
         public Form1()
         {
             InitializeComponent();
+            // 입력되는 숫자 초기화
             num1 = 0;
             num2 = 0;
+
+            // 화면이 불러와질 때, 커서의 위치를 숫자 입력창에서 시작되도록 한다
+            textBox2.TabIndex = 0;
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -92,15 +96,15 @@ namespace SimpleCalculator
                 switch (op)
                 {
                     case Operate.Add:
-                        textBox1.Text += string.Format("{0}={1}", num2, num1+num2); // 연산 진행 {0}: num1 + 연산자, {1}: num2
+                        textBox1.Text += string.Format("{0:#,0}={1:#,0}", num2, num1+num2); // 연산 진행 {0}: num1 + 연산자, {1}: num2
                         break;
 
                     case Operate.Sub:
-                        textBox1.Text += string.Format("{0}={1}", num2, num1-num2); // 연산 진행 {0}: num1 + 연산자, {1}: num2
+                        textBox1.Text += string.Format("{0:#,0}={1:#,0}", num2, num1-num2); // 연산 진행 {0}: num1 + 연산자, {1}: num2
                         break;
 
                     case Operate.Mult:
-                        textBox1.Text += string.Format("{0}={1}", num2, num1 * num2); // 연산 진행 {0}: num1 + 연산자, {1}: num2
+                        textBox1.Text += string.Format("{0:#,0}={1:#,0}", num2, num1 * num2); // 연산 진행 {0}: num1 + 연산자, {1}: num2
                         break;
 
                     case Operate.Div:
@@ -110,8 +114,7 @@ namespace SimpleCalculator
                         }
                         else
                         {
-                            textBox1.Text += string.Format("{0}={1}", num2, num1 / num2); // 연산 진행 {0}: num1 + 연산자, {1}: num2
-                            
+                             textBox1.Text += string.Format("{0:#,0}={1:#,0}", num2, num1 / num2); // 연산 진행 {0}: num1 + 연산자, {1}: num2
                         }
                         break;
 
@@ -123,15 +126,13 @@ namespace SimpleCalculator
                         }
                         else
                         {
-                            textBox1.Text += string.Format("{0}={1}", num2, num1 % num2); // 연산 진행 {0}: num1 + 연산자, {1}: num2
-                            
+                            textBox1.Text += string.Format("{0:#,0}={1:#,0}", num2, num1 % num2); // 연산 진행 {0}: num1 + 연산자, {1}: num2
                         }
-
-                        break;
 
                 }
 
                 calcResult.Text += textBox1.Text + "\r\n";  //결과 출력하기
+                textBox2.Clear();
             }
                 
         }
@@ -139,19 +140,13 @@ namespace SimpleCalculator
 
         private void removeButton_Click(object sender, EventArgs e)
         {
-            // 식 입력창이 비어있는 경우
-            if(string.IsNullOrEmpty(textBox1.Text))
-            {
-                // 숫자 입력창도 비어 있다면, 아무것도 안함
-                if (string.IsNullOrEmpty(textBox2.Text))
-                    return;
-
-                // 맨 뒤의 문자를 지운다
-                textBox2.Text = textBox2.Text.Remove(textBox2.Text.Length - 1);
-            }
+            // 입력창이 비어있는 경우 입력된 식의 맨 뒤의 문자를 지운다
+            if (string.IsNullOrEmpty(textBox2.Text))
+                textBox1.Text = textBox1.Text.Remove(textBox1.Text.Length - 1);
             // 식 입력창에 들어와 있는 문자 마지막걸 지운다
             else
-                textBox1.Text = textBox1.Text.Remove(textBox1.Text.Length - 1);
+                textBox2.Text = textBox2.Text.Remove(textBox2.Text.Length - 1);
+            
         }
 
         /// <summary>
@@ -181,13 +176,69 @@ namespace SimpleCalculator
             //내역삭제 버튼 누르면 내역 목록 지우기
             calcResult.Clear();
         }
-        private void button7_Click(object sender, EventArgs e)
+        private void Clear_button_Click(object sender, EventArgs e)
         {
             //AC버튼 누르면 결과 화면 지우기
             textBox1.Clear();
             textBox2.Clear();
         }
         
+        private void button1_Click(object sender, EventArgs e)
+        {
+            //1버튼 누르면 1추가
+            textBox2.Text += "1";
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            textBox2.Text += "2";
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            textBox2.Text += "3";
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            textBox2.Text += "4";
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            textBox2.Text += "5";
+        }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+            textBox2.Text += "6";
+        }
+
+        private void button7_Click(object sender, EventArgs e)
+        {
+            textBox2.Text += "7";
+        }
+
+        private void button8_Click(object sender, EventArgs e)
+        {
+            textBox2.Text += "8";
+        }
+
+        private void button9_Click(object sender, EventArgs e)
+        {
+            textBox2.Text += "9";
+        }
+
+        private void button0_Click(object sender, EventArgs e)
+        {
+            textBox2.Text += "0";
+        }
+
+        private void button_dot_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("아직 구현 못했습니다ㅠㅠ");
+        }
+
         private void textBox2_TextChanged(object sender, EventArgs e)
         {
             //입력된 숫자를 넣을 변수
@@ -203,17 +254,11 @@ namespace SimpleCalculator
                 // : 뒤의 #,0은 천 단위로 숫자 사이에 쉼표를 삽입합니다.
                 textBox2.Text = string.Format("{0:#,0}", num);
                 
-                textBox2.Select(textBox2.Text.Length, 0);
                 //textBox2의 텍스트의 끝부터 0개의 문자를 선택합니다.
                 //커서를 TextBox 텍스트의 끝으로 이동시킬 수 있습니다.
                 //여기에 새로운 텍스트를 입력하려면 기존 텍스트의 끝에 추가됩니다.
-                
+                textBox2.Select(textBox2.Text.Length, 0);
             }
-        }
-
-        private void calcResult_TextChanged(object sender, EventArgs e)
-        {
-
         }
 
     }
