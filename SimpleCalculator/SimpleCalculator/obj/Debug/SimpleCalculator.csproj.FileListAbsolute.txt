@@ -1,0 +1,10 @@
+C:\Users\barya\Source\Repos\Branch_study\SimpleCalculator\SimpleCalculator\bin\Debug\SimpleCalculator.exe.config
+C:\Users\barya\Source\Repos\Branch_study\SimpleCalculator\SimpleCalculator\bin\Debug\SimpleCalculator.exe
+C:\Users\barya\Source\Repos\Branch_study\SimpleCalculator\SimpleCalculator\bin\Debug\SimpleCalculator.pdb
+C:\Users\barya\Source\Repos\Branch_study\SimpleCalculator\SimpleCalculator\obj\Debug\SimpleCalculator.csproj.AssemblyReference.cache
+C:\Users\barya\Source\Repos\Branch_study\SimpleCalculator\SimpleCalculator\obj\Debug\SimpleCalculator.Form1.resources
+C:\Users\barya\Source\Repos\Branch_study\SimpleCalculator\SimpleCalculator\obj\Debug\SimpleCalculator.Properties.Resources.resources
+C:\Users\barya\Source\Repos\Branch_study\SimpleCalculator\SimpleCalculator\obj\Debug\SimpleCalculator.csproj.GenerateResource.cache
+C:\Users\barya\Source\Repos\Branch_study\SimpleCalculator\SimpleCalculator\obj\Debug\SimpleCalculator.csproj.CoreCompileInputs.cache
+C:\Users\barya\Source\Repos\Branch_study\SimpleCalculator\SimpleCalculator\obj\Debug\SimpleCalculator.exe
+C:\Users\barya\Source\Repos\Branch_study\SimpleCalculator\SimpleCalculator\obj\Debug\SimpleCalculator.pdb

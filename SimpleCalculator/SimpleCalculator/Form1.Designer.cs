@@ -51,6 +51,7 @@
             this.textBox1.ReadOnly = true;
             this.textBox1.Size = new System.Drawing.Size(423, 25);
             this.textBox1.TabIndex = 0;
+            this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // label1
             // 
@@ -60,6 +61,7 @@
             this.label1.Size = new System.Drawing.Size(48, 15);
             this.label1.TabIndex = 1;
             this.label1.Text = "Result";
+            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // textBox2
             // 
@@ -72,7 +74,7 @@
             // addButton
             // 
             this.addButton.Location = new System.Drawing.Point(12, 114);
-            this.addButton.Name = "add_Button";
+            this.addButton.Name = "addButton";
             this.addButton.Size = new System.Drawing.Size(75, 23);
             this.addButton.TabIndex = 3;
             this.addButton.Text = "+";
@@ -82,7 +84,7 @@
             // subButton
             // 
             this.subButton.Location = new System.Drawing.Point(99, 114);
-            this.subButton.Name = "sub_Button";
+            this.subButton.Name = "subButton";
             this.subButton.Size = new System.Drawing.Size(75, 23);
             this.subButton.TabIndex = 4;
             this.subButton.Text = "-";
@@ -92,7 +94,7 @@
             // multiButton
             // 
             this.multiButton.Location = new System.Drawing.Point(189, 114);
-            this.multiButton.Name = "multi_Button";
+            this.multiButton.Name = "multiButton";
             this.multiButton.Size = new System.Drawing.Size(75, 23);
             this.multiButton.TabIndex = 5;
             this.multiButton.Text = "*";
@@ -102,7 +104,7 @@
             // DivButton
             // 
             this.DivButton.Location = new System.Drawing.Point(279, 114);
-            this.DivButton.Name = "div_Button";
+            this.DivButton.Name = "DivButton";
             this.DivButton.Size = new System.Drawing.Size(75, 23);
             this.DivButton.TabIndex = 6;
             this.DivButton.Text = "/";
@@ -112,7 +114,7 @@
             // MoDbutton
             // 
             this.MoDbutton.Location = new System.Drawing.Point(360, 114);
-            this.MoDbutton.Name = "mod_Button";
+            this.MoDbutton.Name = "MoDbutton";
             this.MoDbutton.Size = new System.Drawing.Size(75, 23);
             this.MoDbutton.TabIndex = 7;
             this.MoDbutton.Text = "%";
@@ -122,7 +124,7 @@
             // button6
             // 
             this.button6.Location = new System.Drawing.Point(12, 153);
-            this.button6.Name = "is_Button";
+            this.button6.Name = "button6";
             this.button6.Size = new System.Drawing.Size(75, 23);
             this.button6.TabIndex = 8;
             this.button6.Text = "=";
