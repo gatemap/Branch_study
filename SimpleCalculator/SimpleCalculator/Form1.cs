@@ -104,11 +104,29 @@ namespace SimpleCalculator
                         break;
 
                     case Operate.Div:
-                        textBox1.Text += string.Format("{0}={1}", num2, num1 / num2); // 연산 진행 {0}: num1 + 연산자, {1}: num2
+                        if (num2 == 0) // 0으로 나누는 경우 컷!
+                        {
+                            MessageBox.Show("0으로 나눌 수 없음");
+                        }
+                        else
+                        {
+                            textBox1.Text += string.Format("{0}={1}", num2, num1 / num2); // 연산 진행 {0}: num1 + 연산자, {1}: num2
+                            
+                        }
                         break;
 
-                    case Operate.Mod:
-                        textBox1.Text += string.Format("{0}={1}", num2, num1 % num2); // 연산 진행 {0}: num1 + 연산자, {1}: num2
+                    case Operate.Mod: // 0으로 나누는 경우 컷!
+                        if (num2 == 0)
+                        {
+                            MessageBox.Show("0으로 나눌 수 없음");
+                            textBox2.Clear();
+                        }
+                        else
+                        {
+                            textBox1.Text += string.Format("{0}={1}", num2, num1 % num2); // 연산 진행 {0}: num1 + 연산자, {1}: num2
+                            
+                        }
+
                         break;
 
                 }
@@ -139,6 +157,16 @@ namespace SimpleCalculator
         }
 
         private void calcResult_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
         {
 
         }
