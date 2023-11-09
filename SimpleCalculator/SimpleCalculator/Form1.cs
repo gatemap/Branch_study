@@ -40,7 +40,7 @@ namespace SimpleCalculator
 
         private void addButton_Click(object sender, EventArgs e) // 더하기 버튼 입력하기, num1 + 형태로 출력
         {
-            if (textBox1.Text.Length != 0 && textBox1.Text.Contains('=')) // 이미 입력된 연산자 바꾸기 1234- 상태에서 +를 입력하면 1234+로 바뀜
+            if (textBox1.Text.Length != 0 && !textBox1.Text.Contains('=')) // 이미 입력된 연산자 바꾸기 1234- 상태에서 +를 입력하면 1234+로 바뀜
             {
                 textBox1.Text = textBox1.Text.Substring(0, textBox1.Text.Length - 1); // 연산자는 문자열의 마지막이므로 마지막 빼고 추출
                 textBox1.Text += "+"; // 연산자 바꾸기
@@ -59,7 +59,7 @@ namespace SimpleCalculator
 
         private void subButton_Click(object sender, EventArgs e)
         {            
-            if(textBox1.Text.Length != 0 && textBox1.Text.Contains('=')) // 이미 입력된 연산자 바꾸기
+            if(textBox1.Text.Length != 0 && !textBox1.Text.Contains('=')) // 이미 입력된 연산자 바꾸기
             {
                 textBox1.Text = textBox1.Text.Substring(0, textBox1.Text.Length - 1);
                 textBox1.Text += "-";
@@ -76,7 +76,7 @@ namespace SimpleCalculator
 
         private void multiButton_Click(object sender, EventArgs e)
         {
-            if (textBox1.Text.Length != 0 && textBox1.Text.Contains('='))
+            if (textBox1.Text.Length != 0 && !textBox1.Text.Contains('='))
             {
                 textBox1.Text = textBox1.Text.Substring(0, textBox1.Text.Length - 1);
                 textBox1.Text += "*";
@@ -93,7 +93,7 @@ namespace SimpleCalculator
 
         private void Div_button_Click(object sender, EventArgs e)
         {
-            if (textBox1.Text.Length != 0 && textBox1.Text.Contains('='))
+            if (textBox1.Text.Length != 0 && !textBox1.Text.Contains('='))
             {
                 textBox1.Text = textBox1.Text.Substring(0, textBox1.Text.Length - 1);
                 textBox1.Text += "/";
@@ -110,7 +110,7 @@ namespace SimpleCalculator
 
         private void Mod_button_Click(object sender, EventArgs e)
         {
-            if (textBox1.Text.Length != 0 && textBox1.Text.Contains('='))
+            if (textBox1.Text.Length != 0 && !textBox1.Text.Contains('='))
             {
                 textBox1.Text = textBox1.Text.Substring(0, textBox1.Text.Length - 1);
                 textBox1.Text += "%";
