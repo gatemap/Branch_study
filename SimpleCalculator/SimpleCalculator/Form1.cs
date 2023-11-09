@@ -96,28 +96,29 @@ namespace SimpleCalculator
                 switch (op)
                 {
                     case Operate.Add:
-                        textBox1.Text += string.Format("{0}={1}", num2, num1+num2); // 연산 진행 {0}: num1 + 연산자, {1}: num2
+                        textBox1.Text += string.Format("{0:#,0}={1:#,0}", num2, num1+num2); // 연산 진행 {0}: num1 + 연산자, {1}: num2
                         break;
 
                     case Operate.Sub:
-                        textBox1.Text += string.Format("{0}={1}", num2, num1-num2); // 연산 진행 {0}: num1 + 연산자, {1}: num2
+                        textBox1.Text += string.Format("{0:#,0}={1:#,0}", num2, num1-num2); // 연산 진행 {0}: num1 + 연산자, {1}: num2
                         break;
 
                     case Operate.Mult:
-                        textBox1.Text += string.Format("{0}={1}", num2, num1 * num2); // 연산 진행 {0}: num1 + 연산자, {1}: num2
+                        textBox1.Text += string.Format("{0:#,0}={1:#,0}", num2, num1 * num2); // 연산 진행 {0}: num1 + 연산자, {1}: num2
                         break;
 
                     case Operate.Div:
-                        textBox1.Text += string.Format("{0}={1}", num2, num1 / num2); // 연산 진행 {0}: num1 + 연산자, {1}: num2
+                        textBox1.Text += string.Format("{0:#,0}={1:#,0}", num2, num1 / num2); // 연산 진행 {0}: num1 + 연산자, {1}: num2
                         break;
 
                     case Operate.Mod:
-                        textBox1.Text += string.Format("{0}={1}", num2, num1 % num2); // 연산 진행 {0}: num1 + 연산자, {1}: num2
+                        textBox1.Text += string.Format("{0:#,0}={1:#,0}", num2, num1 % num2); // 연산 진행 {0}: num1 + 연산자, {1}: num2
                         break;
 
                 }
 
                 calcResult.Text += textBox1.Text + "\r\n";  //결과 출력하기
+                textBox2.Clear();
             }
                 
         }
@@ -168,6 +169,62 @@ namespace SimpleCalculator
             textBox2.Clear();
         }
         
+        private void button1_Click(object sender, EventArgs e)
+        {
+            //1버튼 누르면 1추가
+            textBox2.Text += "1";
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            textBox2.Text += "2";
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            textBox2.Text += "3";
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            textBox2.Text += "4";
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            textBox2.Text += "5";
+        }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+            textBox2.Text += "6";
+        }
+
+        private void button7_Click(object sender, EventArgs e)
+        {
+            textBox2.Text += "7";
+        }
+
+        private void button8_Click(object sender, EventArgs e)
+        {
+            textBox2.Text += "8";
+        }
+
+        private void button9_Click(object sender, EventArgs e)
+        {
+            textBox2.Text += "9";
+        }
+
+        private void button0_Click(object sender, EventArgs e)
+        {
+            textBox2.Text += "0";
+        }
+
+        private void button10_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("아직 구현 못했습니다ㅠㅠ");
+        }
+
         private void textBox2_TextChanged(object sender, EventArgs e)
         {
             //입력된 숫자를 넣을 변수
