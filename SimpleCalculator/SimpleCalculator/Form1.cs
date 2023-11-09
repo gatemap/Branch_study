@@ -25,8 +25,12 @@ namespace SimpleCalculator
         public Form1()
         {
             InitializeComponent();
+            // 입력되는 숫자 초기화
             num1 = 0;
             num2 = 0;
+
+            // 화면이 불러와질 때, 커서의 위치를 숫자 입력창에서 시작되도록 한다
+            textBox2.TabIndex = 0;
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -121,16 +125,9 @@ namespace SimpleCalculator
 
         private void removeButton_Click(object sender, EventArgs e)
         {
-            // 입력창이 비어있는 경우
-            if(string.IsNullOrEmpty(textBox2.Text))
-            {
-                // 숫자 입력창이 비어 있다면, 아무것도 안함
-                if (string.IsNullOrEmpty(textBox2.Text))
-                    return;
-
-                // 입력된 식의 맨 뒤의 문자를 지운다
+            // 입력창이 비어있는 경우 입력된 식의 맨 뒤의 문자를 지운다
+            if (string.IsNullOrEmpty(textBox2.Text))
                 textBox1.Text = textBox1.Text.Remove(textBox1.Text.Length - 1);
-            }
             // 식 입력창에 들어와 있는 문자 마지막걸 지운다
             else
                 textBox2.Text = textBox2.Text.Remove(textBox2.Text.Length - 1);
@@ -186,17 +183,11 @@ namespace SimpleCalculator
                 // : 뒤의 #,0은 천 단위로 숫자 사이에 쉼표를 삽입합니다.
                 textBox2.Text = string.Format("{0:#,0}", num);
                 
-                textBox2.Select(textBox2.Text.Length, 0);
                 //textBox2의 텍스트의 끝부터 0개의 문자를 선택합니다.
                 //커서를 TextBox 텍스트의 끝으로 이동시킬 수 있습니다.
                 //여기에 새로운 텍스트를 입력하려면 기존 텍스트의 끝에 추가됩니다.
-                
+                textBox2.Select(textBox2.Text.Length, 0);
             }
-        }
-
-        private void calcResult_TextChanged(object sender, EventArgs e)
-        {
-
         }
 
     }

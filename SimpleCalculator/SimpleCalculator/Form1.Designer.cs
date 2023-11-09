@@ -35,8 +35,8 @@
             this.subButton = new System.Windows.Forms.Button();
             this.multiButton = new System.Windows.Forms.Button();
             this.DivButton = new System.Windows.Forms.Button();
-            this.MoDbutton = new System.Windows.Forms.Button();
-            this.button6 = new System.Windows.Forms.Button();
+            this.ModButton = new System.Windows.Forms.Button();
+            this.resultButton = new System.Windows.Forms.Button();
             this.clearButton = new System.Windows.Forms.Button();
             this.backButton = new System.Windows.Forms.Button();
             this.negativeButton = new System.Windows.Forms.Button();
@@ -50,7 +50,7 @@
             this.textBox1.Name = "textBox1";
             this.textBox1.ReadOnly = true;
             this.textBox1.Size = new System.Drawing.Size(423, 25);
-            this.textBox1.TabIndex = 0;
+            this.textBox1.TabIndex = 2;
             // 
             // label1
             // 
@@ -66,7 +66,7 @@
             this.textBox2.Location = new System.Drawing.Point(12, 73);
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(162, 25);
-            this.textBox2.TabIndex = 2;
+            this.textBox2.TabIndex = 0;
             this.textBox2.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
             // 
             // addButton
@@ -109,25 +109,25 @@
             this.DivButton.UseVisualStyleBackColor = true;
             this.DivButton.Click += new System.EventHandler(this.Div_button_Click);
             // 
-            // MoDbutton
+            // ModButton
             // 
-            this.MoDbutton.Location = new System.Drawing.Point(360, 114);
-            this.MoDbutton.Name = "MoDbutton";
-            this.MoDbutton.Size = new System.Drawing.Size(75, 23);
-            this.MoDbutton.TabIndex = 7;
-            this.MoDbutton.Text = "%";
-            this.MoDbutton.UseVisualStyleBackColor = true;
-            this.MoDbutton.Click += new System.EventHandler(this.Mod_button_Click);
+            this.ModButton.Location = new System.Drawing.Point(360, 114);
+            this.ModButton.Name = "ModButton";
+            this.ModButton.Size = new System.Drawing.Size(75, 23);
+            this.ModButton.TabIndex = 7;
+            this.ModButton.Text = "%";
+            this.ModButton.UseVisualStyleBackColor = true;
+            this.ModButton.Click += new System.EventHandler(this.Mod_button_Click);
             // 
-            // button6
+            // resultButton
             // 
-            this.button6.Location = new System.Drawing.Point(12, 153);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(75, 23);
-            this.button6.TabIndex = 8;
-            this.button6.Text = "=";
-            this.button6.UseVisualStyleBackColor = true;
-            this.button6.Click += new System.EventHandler(this.Is_button_Click);
+            this.resultButton.Location = new System.Drawing.Point(12, 153);
+            this.resultButton.Name = "resultButton";
+            this.resultButton.Size = new System.Drawing.Size(75, 23);
+            this.resultButton.TabIndex = 8;
+            this.resultButton.Text = "=";
+            this.resultButton.UseVisualStyleBackColor = true;
+            this.resultButton.Click += new System.EventHandler(this.Is_button_Click);
             // 
             // clearButton
             // 
@@ -167,7 +167,6 @@
             this.calcResult.ReadOnly = true;
             this.calcResult.Size = new System.Drawing.Size(290, 272);
             this.calcResult.TabIndex = 12;
-            this.calcResult.TextChanged += new System.EventHandler(this.calcResult_TextChanged);
             // 
             // resultDelete
             // 
@@ -189,8 +188,8 @@
             this.Controls.Add(this.negativeButton);
             this.Controls.Add(this.backButton);
             this.Controls.Add(this.clearButton);
-            this.Controls.Add(this.button6);
-            this.Controls.Add(this.MoDbutton);
+            this.Controls.Add(this.resultButton);
+            this.Controls.Add(this.ModButton);
             this.Controls.Add(this.DivButton);
             this.Controls.Add(this.multiButton);
             this.Controls.Add(this.subButton);
@@ -215,8 +214,8 @@
         private System.Windows.Forms.Button subButton;
         private System.Windows.Forms.Button multiButton;
         private System.Windows.Forms.Button DivButton;
-        private System.Windows.Forms.Button MoDbutton;
-        private System.Windows.Forms.Button button6;
+        private System.Windows.Forms.Button ModButton;
+        private System.Windows.Forms.Button resultButton;
         private System.Windows.Forms.Button clearButton;
         private System.Windows.Forms.Button backButton;
         private System.Windows.Forms.Button negativeButton;
