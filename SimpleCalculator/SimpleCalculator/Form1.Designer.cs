@@ -37,9 +37,9 @@
             this.DivButton = new System.Windows.Forms.Button();
             this.MoDbutton = new System.Windows.Forms.Button();
             this.button6 = new System.Windows.Forms.Button();
-            this.button7 = new System.Windows.Forms.Button();
-            this.button8 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
+            this.clearButton = new System.Windows.Forms.Button();
+            this.backButton = new System.Windows.Forms.Button();
+            this.negativeButton = new System.Windows.Forms.Button();
             this.calcResult = new System.Windows.Forms.TextBox();
             this.resultDelete = new System.Windows.Forms.Button();
             this.SuspendLayout();
@@ -72,7 +72,7 @@
             // addButton
             // 
             this.addButton.Location = new System.Drawing.Point(12, 114);
-            this.addButton.Name = "add_Button";
+            this.addButton.Name = "addButton";
             this.addButton.Size = new System.Drawing.Size(75, 23);
             this.addButton.TabIndex = 3;
             this.addButton.Text = "+";
@@ -82,7 +82,7 @@
             // subButton
             // 
             this.subButton.Location = new System.Drawing.Point(99, 114);
-            this.subButton.Name = "sub_Button";
+            this.subButton.Name = "subButton";
             this.subButton.Size = new System.Drawing.Size(75, 23);
             this.subButton.TabIndex = 4;
             this.subButton.Text = "-";
@@ -92,7 +92,7 @@
             // multiButton
             // 
             this.multiButton.Location = new System.Drawing.Point(189, 114);
-            this.multiButton.Name = "multi_Button";
+            this.multiButton.Name = "multiButton";
             this.multiButton.Size = new System.Drawing.Size(75, 23);
             this.multiButton.TabIndex = 5;
             this.multiButton.Text = "*";
@@ -102,7 +102,7 @@
             // DivButton
             // 
             this.DivButton.Location = new System.Drawing.Point(279, 114);
-            this.DivButton.Name = "div_Button";
+            this.DivButton.Name = "DivButton";
             this.DivButton.Size = new System.Drawing.Size(75, 23);
             this.DivButton.TabIndex = 6;
             this.DivButton.Text = "/";
@@ -112,7 +112,7 @@
             // MoDbutton
             // 
             this.MoDbutton.Location = new System.Drawing.Point(360, 114);
-            this.MoDbutton.Name = "mod_Button";
+            this.MoDbutton.Name = "MoDbutton";
             this.MoDbutton.Size = new System.Drawing.Size(75, 23);
             this.MoDbutton.TabIndex = 7;
             this.MoDbutton.Text = "%";
@@ -122,42 +122,42 @@
             // button6
             // 
             this.button6.Location = new System.Drawing.Point(12, 153);
-            this.button6.Name = "is_Button";
+            this.button6.Name = "button6";
             this.button6.Size = new System.Drawing.Size(75, 23);
             this.button6.TabIndex = 8;
             this.button6.Text = "=";
             this.button6.UseVisualStyleBackColor = true;
             this.button6.Click += new System.EventHandler(this.Is_button_Click);
             // 
-            // button7
+            // clearButton
             // 
-            this.button7.Location = new System.Drawing.Point(12, 192);
-            this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(75, 23);
-            this.button7.TabIndex = 9;
-            this.button7.Text = "AC";
-            this.button7.UseVisualStyleBackColor = true;
-            this.button7.Click += new System.EventHandler(this.button7_Click);
+            this.clearButton.Location = new System.Drawing.Point(12, 192);
+            this.clearButton.Name = "clearButton";
+            this.clearButton.Size = new System.Drawing.Size(75, 23);
+            this.clearButton.TabIndex = 9;
+            this.clearButton.Text = "AC";
+            this.clearButton.UseVisualStyleBackColor = true;
+            this.clearButton.Click += new System.EventHandler(this.Clear_button_Click);
             // 
-            // button8
+            // backButton
             // 
-            this.button8.Location = new System.Drawing.Point(99, 192);
-            this.button8.Name = "removeButton";
-            this.button8.Size = new System.Drawing.Size(75, 23);
-            this.button8.TabIndex = 10;
-            this.button8.Text = "←";
-            this.button8.UseVisualStyleBackColor = true;
-            this.button8.Click += new System.EventHandler(this.removeButton_Click);
+            this.backButton.Location = new System.Drawing.Point(99, 192);
+            this.backButton.Name = "backButton";
+            this.backButton.Size = new System.Drawing.Size(75, 23);
+            this.backButton.TabIndex = 10;
+            this.backButton.Text = "←";
+            this.backButton.UseVisualStyleBackColor = true;
+            this.backButton.Click += new System.EventHandler(this.removeButton_Click);
             // 
-            // button1
+            // negativeButton
             // 
-            this.button1.Location = new System.Drawing.Point(189, 192);
-            this.button1.Name = "minusChangebutton";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 11;
-            this.button1.Text = "+/-";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.minusChange_Click);
+            this.negativeButton.Location = new System.Drawing.Point(189, 192);
+            this.negativeButton.Name = "negativeButton";
+            this.negativeButton.Size = new System.Drawing.Size(75, 23);
+            this.negativeButton.TabIndex = 11;
+            this.negativeButton.Text = "+/-";
+            this.negativeButton.UseVisualStyleBackColor = true;
+            this.negativeButton.Click += new System.EventHandler(this.minusChange_Click);
             // 
             // calcResult
             // 
@@ -186,9 +186,9 @@
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.resultDelete);
             this.Controls.Add(this.calcResult);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.button8);
-            this.Controls.Add(this.button7);
+            this.Controls.Add(this.negativeButton);
+            this.Controls.Add(this.backButton);
+            this.Controls.Add(this.clearButton);
             this.Controls.Add(this.button6);
             this.Controls.Add(this.MoDbutton);
             this.Controls.Add(this.DivButton);
@@ -217,9 +217,9 @@
         private System.Windows.Forms.Button DivButton;
         private System.Windows.Forms.Button MoDbutton;
         private System.Windows.Forms.Button button6;
-        private System.Windows.Forms.Button button7;
-        private System.Windows.Forms.Button button8;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button clearButton;
+        private System.Windows.Forms.Button backButton;
+        private System.Windows.Forms.Button negativeButton;
         private System.Windows.Forms.TextBox calcResult;
         private System.Windows.Forms.Button resultDelete;
     }

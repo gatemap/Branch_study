@@ -121,19 +121,20 @@ namespace SimpleCalculator
 
         private void removeButton_Click(object sender, EventArgs e)
         {
-            // 식 입력창이 비어있는 경우
-            if(string.IsNullOrEmpty(textBox1.Text))
+            // 입력창이 비어있는 경우
+            if(string.IsNullOrEmpty(textBox2.Text))
             {
-                // 숫자 입력창도 비어 있다면, 아무것도 안함
+                // 숫자 입력창이 비어 있다면, 아무것도 안함
                 if (string.IsNullOrEmpty(textBox2.Text))
                     return;
 
-                // 맨 뒤의 문자를 지운다
-                textBox2.Text = textBox2.Text.Remove(textBox2.Text.Length - 1);
+                // 입력된 식의 맨 뒤의 문자를 지운다
+                textBox1.Text = textBox1.Text.Remove(textBox1.Text.Length - 1);
             }
             // 식 입력창에 들어와 있는 문자 마지막걸 지운다
             else
-                textBox1.Text = textBox1.Text.Remove(textBox1.Text.Length - 1);
+                textBox2.Text = textBox2.Text.Remove(textBox2.Text.Length - 1);
+            
         }
 
         /// <summary>
@@ -163,7 +164,7 @@ namespace SimpleCalculator
             //내역삭제 버튼 누르면 내역 목록 지우기
             calcResult.Clear();
         }
-        private void button7_Click(object sender, EventArgs e)
+        private void Clear_button_Click(object sender, EventArgs e)
         {
             //AC버튼 누르면 결과 화면 지우기
             textBox1.Clear();
