@@ -139,7 +139,7 @@
             this.resultButton.TabIndex = 8;
             this.resultButton.Text = "=";
             this.resultButton.UseVisualStyleBackColor = true;
-            this.resultButton.Click += new System.EventHandler(this.Is_button_Click);
+            this.resultButton.Click += new System.EventHandler(this.Print_Result_Button_Click);
             // 
             // clearButton
             // 
